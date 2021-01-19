@@ -1,15 +1,13 @@
 import React from 'react';
 //Components
-import Player from '../Player/Player';
+//import Player from '../Player/Player';
+// import Coach from '../Coach/Coach';
 
-const Team = () => {
+const Team = ({ team_name, team_badge, team_players, team_coaches }) => {
     return (
         <div>
-            <img src="" alt=""/>
-            <h2>Juventus</h2>
-            <div>
-                <Player />
-            </div>
+            <img src={team_badge} alt={`${team_name}'s badge`}/>
+            <h2>{team_name}</h2>
         </div>
     );
 };
