@@ -1,14 +1,14 @@
 import React from 'react';
 //Components
-import Jugador from './../Jugador/Jugador';
+import Player from '../Player/Player';
 
 const Team = () => {
     return (
         <div>
-            <image src="" alt=""/>
+            <img src="" alt=""/>
             <h2>Juventus</h2>
             <div>
-                <Jugador />
+                <Player />
             </div>
         </div>
     );

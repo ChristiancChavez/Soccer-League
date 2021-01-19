@@ -19,7 +19,7 @@ useEffect(() => {
     return (
         <div>
             {leagues.map(league => 
-                <League league={league.country_logo} key={league.country_id} alt={league.country_name} />    
+                <League logo={league.country_logo} key={league.country_id} alt={league.country_name} id={league.country_id} />    
             )}
         </div>
     );
