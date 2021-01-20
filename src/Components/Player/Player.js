@@ -1,16 +1,16 @@
 import React from 'react';
 
-const Jugador = () => {
+const Player = ({ player_name, player_type, player_country, player_age, player_number }) => {
     return (
         <div>
             <img src="" alt="" />
-            <h3>Cristiano Ronaldo</h3>
-            <span>Portugal</span>
-            <span>32 Years old</span>
-            <span># 7</span>
-            <span>Striker</span>
+            <h3>{player_name}</h3>
+            <span>{player_country}</span>
+            <span>{`${player_age}Years`}</span>
+            <span>{`# ${player_number}`}</span>
+            <span>{player_type}</span>
         </div>
     );
 };
 
-export default Jugador;
+export default Player;

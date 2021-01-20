@@ -28,8 +28,10 @@ const Teams = () => {
     };
 
     useEffect(() => {
-        handleFetchTeams(competition.league_id);
-    },[competition])
+        if(competition.league_id) {
+            handleFetchTeams(competition.league_id);
+        }
+    }, [competition])
 
     let leagueLogo;
 
@@ -60,14 +62,9 @@ const Teams = () => {
                 <h2>{competition.league_name}</h2>
                 <h3>{competition.league_season}</h3>
             </div>
-            {!!teams &&
-                <div>
-                    {teams.map(team => 
-                        <Team team_name={team.team_name} team_badge={team.team_badge} team_players={team.players} team_coaches={team.coaches} />    
-                    )}
-                </div>
-            }
-            <h1>HELLLOOOO</h1>
+            {!!teams && teams.map(team => 
+                <Team team_name={team.team_name} team_badge={team.team_badge} team_players={team.players} team_coaches={team.coaches} key={team.team_key} />    
+            )}
         </div>
     );
 };

@@ -1,14 +1,12 @@
 import React from 'react';
 
-const Coach = () => {
+const Coach = ({ coach_age, coach_country, coach_name }) => {
     return (
         <div>
             <img src="" alt="" />
-            <h3>Alexander Guimaraes</h3>
-            <span>Portugal</span>
-            <span>32 Years old</span>
-            <span># 7</span>
-            <span>Striker</span>
+            <h3>{coach_name}</h3>
+            <span>{coach_country}</span>
+            <span>{`${coach_age} Years`}</span>
         </div>
     );
 };
