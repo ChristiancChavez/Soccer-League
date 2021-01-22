@@ -2,8 +2,16 @@ import React, { useState } from 'react';
 //Components
 import Player from '../Player/Player';
 import Coach from './../Coach/Coach';
+import Spinner from './../Spinner/Spinner';
+//Dependencies
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faChild } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 const Team = ({ team_name, team_badge, team_players, team_coaches }) => {
+
+    library.add(faChild);
 
     const [ showPlayers, setShowPlayers] = useState(false);
 
@@ -11,8 +19,13 @@ const Team = ({ team_name, team_badge, team_players, team_coaches }) => {
         <div>
             <img src={team_badge} alt={`${team_name}'s badge`} onClick={() => setShowPlayers(true)} />
             <h2>{team_name}</h2>
-            {showPlayers && 
-                <div>
+            {showPlayers ? 
+                (<div>
+                    <div>
+                        <button type="">
+                            <FontAwesomeIcon icon={faChild} />
+                        </button>
+                    </div>
                     <div>
                         {
                             team_players.map(player => 
@@ -40,6 +53,10 @@ const Team = ({ team_name, team_badge, team_players, team_coaches }) => {
                         }
                     </div>
                 </div>
+                ):
+                (
+                    <Spinner />
+                )
             }
         </div>
     );

@@ -8,6 +8,7 @@ import Teams from './Components/Teams/Teams';
 //Context
 import SoccerFanContextProvider from './context/contextSoccer';
 
+
 function App() {
   return (
     <div className="App">

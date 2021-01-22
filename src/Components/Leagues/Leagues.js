@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 //Components
 import League from './../League/League';
+import Spinner from './../Spinner/Spinner';
 
 const Leagues = () => {
 
     const [leagues, setLeagues] = useState([]);
+    const [loading, setLoading] = useState(true);
 
     const LEAGUES_ID = {
         Colombia: '102',
@@ -22,15 +24,30 @@ useEffect(() => {
             acc = [...acc, {...filterLeague,league_id: LEAGUES_ID[filterLeague.country_name] }]
             return acc;
         }, []);
-        setLeagues(addLeagueId)}); 
+        setLeagues(addLeagueId);
+        setLoading(false);
+    }); 
     }
 , [])
 
     return (
         <div>
-            {leagues.map(league => 
-                <League logo={league.country_logo} key={league.country_id} alt={league.country_name} country_id={league.country_id} league_id={league.league_id} />    
-            )}
+            {loading ? 
+                (
+                    <Spinner />
+                ): 
+                (
+                    leagues.map(league => 
+                        <League 
+                            logo={league.country_logo} 
+                            key={league.country_id} 
+                            alt={league.country_name} 
+                            country_id={league.country_id} 
+                            league_id={league.league_id} 
+                        /> 
+                    )
+                )
+            }
         </div>
     );
 };
