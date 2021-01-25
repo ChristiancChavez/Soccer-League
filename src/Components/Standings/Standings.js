@@ -3,6 +3,8 @@ import React, { useContext } from 'react';
 import Standing from './../Standing/Standing';
 //Context
 import { SoccerFanContext } from './../../context/contextSoccer';
+//Images
+import Ball from '../../Assets/images/ball.png';
 
 const Standings = () => {
 
@@ -24,6 +26,7 @@ const Standings = () => {
                     goals_against={standing.overall_league_GA} 
                 />    
             )}
+            <img src={Ball} alt="league's standings" />
         </div>
     );
 };
