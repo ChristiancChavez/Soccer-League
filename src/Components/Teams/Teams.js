@@ -8,7 +8,7 @@ const Teams = () => {
     const { teams } = useContext(SoccerFanContext);
     return (
         <div>
-            {!!teams && teams.map(team => 
+            {!!teams.length && teams.map(team => 
                 <Team 
                     team_name={team.team_name} 
                     team_badge={team.team_badge} 
