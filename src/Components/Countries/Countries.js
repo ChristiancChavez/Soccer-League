@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 //Components
-import League from './../League/League';
-import Spinner from './../Spinner/Spinner';
+import League from '../Country/Country';
+import Spinner from '../Spinner/Spinner';
+//Context
+import { SoccerFanContext } from '../../context/contextSoccer';
 
-const Leagues = () => {
+const Countries = () => {
 
     const [leagues, setLeagues] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { LEAGUES_ID } = useContext(SoccerFanContext)
 
-    const LEAGUES_ID = {
-        Colombia: '102',
-        England: '148',
-        Germany: '195',
-        Spain: '468',
-        Italy: '262'
-    }        
 useEffect(() => {   
     fetch('https://apiv2.apifootball.com/?action=get_countries&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53')   
     .then(response => response.json())   
@@ -52,4 +48,4 @@ useEffect(() => {
     );
 };
 
-export default Leagues;
+export default Countries;

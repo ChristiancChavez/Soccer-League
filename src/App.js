@@ -2,9 +2,8 @@ import './App.css';
 import React from 'react';
 //Components
 import Header from './Components/Header/Header';
-import Leagues from './Components/Leagues/Leagues';
-import Main from './Components/Main/Main';
-import Teams from './Components/Teams/Teams';
+import Countries from './Components/Countries/Countries';
+import League from './Components/League/League';
 //Context
 import SoccerFanContextProvider from './context/contextSoccer';
 
@@ -14,9 +13,8 @@ function App() {
     <div className="App">
       <Header />
       <SoccerFanContextProvider>
-        <Leagues />
-        <Main />
-        <Teams />
+        <Countries />
+        <League />
       </SoccerFanContextProvider>
     </div>
   );
