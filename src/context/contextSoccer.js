@@ -1,4 +1,6 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useReducer } from "react";
+//Reducer
+import { fanListReducer } from './../Components/reducer/fanListReducer';
 
 export const SoccerFanContext = createContext();
 
@@ -9,6 +11,10 @@ const SoccerFanContextProvider = (props) => {
     const [topScores, setTopScores] = useState([]);
     const [standings, setStandings] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [fanList, dispatch] = useReducer(fanListReducer, [], () => {
+        const localDataFanList = localStorage.getItem('fanList');
+        return localDataFanList ? JSON.parse(localDataFanList) : [];
+    });
 
     const [teams, setTeams] = useState([]);
     const LEAGUES_ID = {
@@ -35,7 +41,9 @@ const SoccerFanContextProvider = (props) => {
                     standings, 
                     setStandings,
                     loading, 
-                    setLoading
+                    setLoading,
+                    fanList, 
+                    dispatch
                 }   
             }
         >
