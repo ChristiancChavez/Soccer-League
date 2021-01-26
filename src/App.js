@@ -4,6 +4,7 @@ import React from 'react';
 import Header from './Components/Header/Header';
 import Countries from './Components/Countries/Countries';
 import League from './Components/League/League';
+import FanList from './Components/FanList/FanList';
 //Context
 import SoccerFanContextProvider from './context/contextSoccer';
 
@@ -15,6 +16,7 @@ function App() {
       <SoccerFanContextProvider>
         <Countries />
         <League />
+        <FanList />
       </SoccerFanContextProvider>
     </div>
   );

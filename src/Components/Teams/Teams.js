@@ -14,6 +14,7 @@ const Teams = () => {
                     team_badge={team.team_badge} 
                     team_players={team.players} 
                     team_coaches={team.coaches} 
+                    team_id={team.team_key}
                     key={team.team_key} 
                 />
             )}
