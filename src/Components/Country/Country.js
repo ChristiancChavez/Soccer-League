@@ -26,7 +26,7 @@ const Country = ({ logo, alt, country_id, league_id }) => {
 
     return (
         <button className="country" onClick={() => handleFetchTeams(country_id, league_id)}>
-            <img className="country__flag" src={logo} alt={alt} />
+            <img className="country__flag" src={logo} alt={alt} title={alt} />
         </button>
     );
 };

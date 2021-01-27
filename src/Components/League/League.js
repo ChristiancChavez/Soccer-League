@@ -18,6 +18,8 @@ import PrimeraA from  '../../Assets/images/Colombia.png';
 import PremierLeague from  '../../Assets/images/England.png';
 import LaLiga from  '../../Assets/images/Spain.png';
 import Bundesliga from  '../../Assets/images/Germany.png';
+//Style
+import './league.scss';
 
 
 
@@ -79,14 +81,20 @@ const League = () => {
     const handleRenderTeams = () => {
         if(loading) {
             return <>
-                <div>
-                    <img src={competition.league_logo ? competition.league_logo: leagueLogo} alt={`${competition.country_name} league logo`}/>
-                    <h2>{competition.league_name}</h2>
-                    <h3>{competition.league_season}</h3>
-                    <div>
-                        <Button icon={topscore} category="TopScores" method={handleFetchTopScores} league_id={competition.league_id} />
-                        <Button icon={shield} category="Teams" method={handleFetchTeams} league_id={competition.league_id}  />
-                        <Button icon={standing} category="Standings" method={handleFetchStandings} league_id={competition.league_id}  />
+                <div className="league">
+                    <div className="league-presentation">
+                        <h2 className="league-presentation__name">
+                            {competition.league_name}
+                        </h2>
+                        <div className="league-presentation__logo">                        
+                            <img src={competition.league_logo ? competition.league_logo: leagueLogo} alt={`${competition.country_name} league logo`}/>                        
+                        </div>
+                        <h3 className="league-presentation__season">{competition.league_season}</h3>
+                        <div className="league-buttons">
+                            <Button icon={topscore} category="TopScores" method={handleFetchTopScores} league_id={competition.league_id} />
+                            <Button icon={shield} category="Teams" method={handleFetchTeams} league_id={competition.league_id}  />
+                            <Button icon={standing} category="Standings" method={handleFetchStandings} league_id={competition.league_id}  />
+                        </div>
                     </div>
                     <div>
                         {

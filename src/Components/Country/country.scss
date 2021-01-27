@@ -1,14 +1,15 @@
 .country {
     background: transparent;
     border: none;
-    cursor: pointer;
+    outline: none;
     &__flag {
-        width: 40px;
-        height: 40px;
+        width: 30px;
+        height: 30px;
         border-radius: 50%;
-        filter: grayscale(40%);
+        border: 1px solid white;
+        cursor: pointer;
         &:hover {
-            filter: grayscale(0);
+            transform: scale(0.9);
         }
     }
 }

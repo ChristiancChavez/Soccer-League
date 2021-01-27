@@ -1,0 +1,64 @@
+.league {
+    display: grid;
+    //grid-template-columns: 30% 70%;
+    grid-template-rows: repeat(2, 1fr);
+    background: white;
+    font-family: 'Abel', cursive;
+    &-presentation {
+        // border-bottom: 300px solid rgb(1, 66, 104);
+        // border-right: 50px solid transparent;
+        // height: 0;
+        background: rgb(1, 66, 104);
+        padding: 40px 15px;
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        &__name {
+            color: white;
+            margin-top: 0;
+            margin-bottom: 50px;
+            font-size: 30px;
+            font-weight: 600;
+        }
+        &__logo {
+            position: relative;
+            width: 130px;
+            background: linear-gradient(180deg, white 0%, gray 50%, white 100%);
+            margin-bottom: 40px;
+            box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
+            &::before {
+                content: "";
+                position: absolute;
+                top: -28.8675px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-left: 65px solid transparent;
+                border-right: 65px solid transparent;
+                border-bottom: 28.8675px solid white;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                bottom: -28.8675px;
+                left: 0;
+                width: 0;
+                height: 0;
+                border-left: 65px solid transparent;
+                border-right: 65px solid transparent;
+                border-top: 28.8675px solid white;
+            }
+        }
+        &__season {
+            margin-top: 0;
+            color: white;
+            font-weight: lighter;
+        }
+    }
+    &-buttons {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-top: 20px;
+    }
+    
+}
