@@ -4,6 +4,8 @@ import League from '../Country/Country';
 import Spinner from '../Spinner/Spinner';
 //Context
 import { SoccerFanContext } from '../../context/contextSoccer';
+//Style
+import './countries.scss';
 
 const Countries = () => {
 
@@ -27,7 +29,7 @@ useEffect(() => {
 , [])
 
     return (
-        <div>
+        <div className="countries">
             {loading ? 
                 (
                     <Spinner />

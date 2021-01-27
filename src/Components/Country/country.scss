@@ -1,0 +1,14 @@
+.country {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &__flag {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        filter: grayscale(40%);
+        &:hover {
+            filter: grayscale(0);
+        }
+    }
+}

@@ -1,9 +1,18 @@
 .header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
     background: rgb(1, 66, 104);
     &__title {
-        font-size: 60px;
-        font-weight: 800;
-        font-family: 'Audiowide', cursive;
+        font-size: 30px;
+        font-family: 'Federant', cursive;
         color:white;
+        margin-right: 15px;
+        font-style: italic;
+    }
+    &__icon {
+        width: 30px;
+        height: 30px;
     }
 }

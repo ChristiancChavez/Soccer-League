@@ -8,9 +8,9 @@ const Header = () => {
     return (
         <div className="header">
             <h1 className="header__title">
-                Soccer fan
+                Soccer Fan
             </h1>
-            <img src={ball} alt="ball icon" />
+            <img className="header__icon" src={ball} alt="ball icon" />
         </div>
         
     );
