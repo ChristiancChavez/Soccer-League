@@ -1,0 +1,9 @@
+.header {
+    background: rgb(1, 66, 104);
+    &__title {
+        font-size: 60px;
+        font-weight: 800;
+        font-family: 'Audiowide', cursive;
+        color:white;
+    }
+}
