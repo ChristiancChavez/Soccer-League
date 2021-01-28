@@ -9,6 +9,8 @@ import { faUsers, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //Context
 import { SoccerFanContext } from './../../context/contextSoccer';
+//Style
+import './team.scss';
 
 
 const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) => {
@@ -81,17 +83,17 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
     };
     
     return (
-        <div>
-            <img src={team_badge} alt={`${team_name}'s badge`} />
-            <h2>{team_name}</h2>
+        <div className="team">
+            <img className="team__badge" src={team_badge} alt={`${team_name}'s badge`} />
+            <h2 className="team__name">{team_name}</h2>
             {renderPlayer && 
                 handleRenderPlayers()
             }
-            <div>
-                <button type="button" onClick={handleShowPlayers} >
+            <div className="team-actions">
+                <button className="team-actions__action" type="button" onClick={handleShowPlayers} >
                     <FontAwesomeIcon icon={faUsers} />
                 </button>
-                <button type="button" onClick={() => handleAddToFanList(team_badge, team_id, team_name)} >
+                <button className="team-actions__action" type="button" onClick={() => handleAddToFanList(team_badge, team_id, team_name)} >
                     <FontAwesomeIcon icon={faStar} />
                 </button>
             </div>
