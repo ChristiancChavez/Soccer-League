@@ -5,8 +5,9 @@
     margin-bottom: 15px;
     padding: 10px 5px;
     border-radius: 12px;
-    background: rgba(97, 97, 97, 0.432);
+    background: rgba(100, 98, 98, 0.377);
     border: 1px solid lightgray;
+    text-align: center;
     &__name {
         margin: 0;
         font-weight: 600;
@@ -42,12 +43,33 @@
                 content: "";
                 position: absolute;
                 top: 0;
-                left: -25px;
-                width: 15px;
+                left: -30px;
+                width: 25px;
                 height: 100%;
                 background: rgb(211, 211, 211);
                 transform: skewX(-30deg);
                 transition: 0.7s;
+            }
+        }
+    }
+    &-content {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: grid;
+        grid-template-rows: 1fr, 5%;
+        background: rgb(100, 98, 98);
+        z-index: 50;
+        &-staff {
+            display: flex;
+            flex-flow: column nowrap;
+            justify-items: center;
+            padding: 15px;
+            &__title {
+                font-size: 30px;
+                font-weight: 800;
+                color: white;
+                margin: 20px 0;
             }
         }
     }

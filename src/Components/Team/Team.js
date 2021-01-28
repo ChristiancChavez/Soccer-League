@@ -50,30 +50,30 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
 
     const handleRenderPlayers = () => {
         if(showPlayers){
-            return <div>
-                <div>
-                    {
-                        team_players.map(player => 
-                            <Player 
-                                player_name={player.player_name} 
-                                player_type={player.player_type} 
-                                player_country={player.player_country} 
-                                player_age={player.player_age} 
-                                player_number={player.player_number}
-                                key={player.player_key}
-                            />
+            return <div className="team-content">
+                <div className="team-content-staff"> 
+                    <span className="team-content-staff__title">Players</span>
+                    {team_players.map(player => 
+                        <Player 
+                            player_name={player.player_name} 
+                            player_type={player.player_type} 
+                            player_country={player.player_country} 
+                            player_age={player.player_age} 
+                            player_number={player.player_number}
+                            key={player.player_key}
+                        />
                         )
                     }
                 </div>
-                <div>
-                    {
-                        team_coaches.map(coach => 
-                            <Coach 
-                                coach_age={coach.coach_age} 
-                                coach_country={coach.coach_country} 
-                                coach_name={coach.coach_name}
-                                key={coach.coach_name}
-                            />
+                <div className="team-content-staff">
+                    <span className="team-content-staff__title">Coach</span>
+                    {team_coaches.map(coach => 
+                        <Coach 
+                            coach_age={coach.coach_age} 
+                            coach_country={coach.coach_country} 
+                            coach_name={coach.coach_name}
+                            key={coach.coach_name}
+                        />
                         )
                     }
                 </div>

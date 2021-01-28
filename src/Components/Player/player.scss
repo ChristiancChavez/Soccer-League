@@ -1,0 +1,46 @@
+.player {
+    display: flex;
+    flex-flow:  column nowrap;
+    align-items: center;
+    padding: 20px 5px;
+    margin: 10px 5px;
+    text-align: center;
+    background: rgb(158, 158, 158);
+    border-radius: 12px;
+    &-user {
+        border: none;
+        border-radius: 50%;
+        background: gray;
+        padding: 30px;
+        &__icon {
+            width: 70px;
+        }
+    }
+    &-info {
+        display: flex;
+        flex-flow:  column nowrap;
+        align-items: center;
+        margin: 5px 0;
+        & h3 {
+            font-size: 35px;
+            font-weight: 800;
+            margin: 5px 0;
+            color: white;
+        }
+        &-category {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            &__icon {
+                width: 35px;
+                height: 35px;
+                margin-right: 5px;
+                color: lightgray;
+            }
+            &__text {
+                font-size: 20px;
+                font-weight: lighter;
+            }
+        }
+    }
+}
