@@ -1,0 +1,26 @@
+.standings {
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    padding: 15px 10px;
+    &__title {
+        font-size: 40px;
+        font-weight: 900;
+        color: rgb(1, 66, 104);
+        margin: 20px 0;
+    }
+    &__image {
+        width: 60px;
+        height: 60px;
+    }
+    &-table {
+        box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
+        border-radius: 12px;
+        padding: 10px 5px;
+        & th {
+            border-bottom: 1px solid gray;
+            padding-bottom: 2px;
+            font-size: 13px;
+        }
+    }
+}

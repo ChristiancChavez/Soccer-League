@@ -10,7 +10,7 @@
     &-user {
         border: none;
         border-radius: 50%;
-        background: gray;
+        background: rgb(1, 66, 104);
         padding: 30px;
         &__icon {
             width: 70px;
@@ -35,7 +35,7 @@
                 width: 35px;
                 height: 35px;
                 margin-right: 5px;
-                color: rgb(1, 66, 104);
+                color: lightgray;
             }
             &__text {
                 font-size: 20px;

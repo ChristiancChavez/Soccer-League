@@ -97,11 +97,9 @@ const League = () => {
                             <Button icon={standing} category="Standings" method={handleFetchStandings} league_id={competition.league_id}  />
                         </div>
                     </div>
-                    <div>
-                        {
-                            handleRenderTeamsContent()
-                        }
-                    </div>
+                    {
+                        handleRenderTeamsContent()
+                    }
                 </div> 
             </div>  
         }
