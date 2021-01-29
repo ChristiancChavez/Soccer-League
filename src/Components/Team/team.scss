@@ -5,7 +5,7 @@
     margin-bottom: 15px;
     padding: 10px 5px;
     border-radius: 12px;
-    background: rgba(100, 98, 98, 0.377);
+    box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
     border: 1px solid lightgray;
     text-align: center;
     &__name {
@@ -36,6 +36,9 @@
             margin: 0 10px;
             width: 30px;
             height: 30px;
+            &:hover {
+                transform: scale(0.9);
+            }
             &:hover:before {
                 left: 50px;
             }
@@ -58,8 +61,25 @@
         top: 0;
         display: grid;
         grid-template-rows: 1fr, 5%;
-        background: rgb(100, 98, 98);
+        background: white;
         z-index: 50;
+        &__close {
+            font-size: 15px;
+            color: black;
+            position: absolute;
+            top: 0;
+            right: 5px;
+            box-shadow: 0 5px 30px rgba(3, 3, 3, 0.938);
+            border: none;
+            border-radius: 50%;
+            padding: 6px 9px;
+            font-weight: bolder;
+            cursor: pointer;
+            &:hover {
+                color: rgba(255, 0, 0, 0.589);
+            }
+            
+        }
         &-staff {
             display: flex;
             flex-flow: column nowrap;
@@ -68,8 +88,8 @@
             &__title {
                 font-size: 30px;
                 font-weight: 800;
-                color: white;
-                margin: 20px 0;
+                color: rgb(1, 66, 104);
+                margin: 10px 0;
             }
         }
     }

@@ -53,6 +53,7 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
             return <div className="team-content">
                 <div className="team-content-staff"> 
                     <span className="team-content-staff__title">Players</span>
+                    <button className="team-content__close" type="button">X</button>
                     {team_players.map(player => 
                         <Player 
                             player_name={player.player_name} 

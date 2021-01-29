@@ -3,13 +3,13 @@
     border: none;
     outline: none;
     &__flag {
-        width: 30px;
-        height: 30px;
+        width: 33px;
+        height: 33px;
         border-radius: 50%;
         border: 1px solid white;
         cursor: pointer;
         &:hover {
-            transform: scale(0.9);
+            transform: scale(1.3);
         }
     }
 }

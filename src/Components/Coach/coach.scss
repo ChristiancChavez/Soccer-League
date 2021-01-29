@@ -5,8 +5,8 @@
     padding: 20px 5px;
     margin: 10px 5px;
     text-align: center;
-    background: rgb(158, 158, 158);
     border-radius: 12px;
+    box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
     &-user {
         border: none;
         border-radius: 50%;
@@ -24,8 +24,8 @@
         & h3 {
             font-size: 30px;
             font-weight: 800;
-            margin: 5px 0;
-            color: rgb(1, 66, 104);
+            margin: 0;
+            color: black;
         }
         &-category {
             display: flex;
@@ -35,7 +35,7 @@
                 width: 35px;
                 height: 35px;
                 margin-right: 5px;
-                color: lightgray;
+                color: rgb(1, 66, 104);
             }
             &__text {
                 font-size: 20px;
