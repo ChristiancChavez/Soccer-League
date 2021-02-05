@@ -75,7 +75,7 @@ const League = () => {
             case 'standings':
                 return <Standings />
             default:
-                return <span>Choose the league's content</span>
+                return ''
         }
     }
 
@@ -97,8 +97,18 @@ const League = () => {
                             <Button icon={standing} category="Standings" method={handleFetchStandings} league_id={competition.league_id}  />
                         </div>
                     </div>
+                    
                     {
-                        handleRenderTeamsContent()
+                        handleRenderTeamsContent() ?
+                        (
+                            handleRenderTeamsContent()
+                        ): 
+                        (   <div className="league-content">
+                                <span className="league-content__text">Select the league's content</span>
+                                <Spinner />
+                            </div>
+                        )
+                        
                     }
                 </div> 
             </div>  

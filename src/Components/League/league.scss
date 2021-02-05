@@ -68,5 +68,14 @@
         grid-template-columns: repeat(3, 1fr);
         margin-top: 20px;
     }
+    &-content {
+        display: flex; 
+        flex-flow: column nowrap;
+        margin: 15px 0;
+        &__text {
+            margin: 10px 0;
+            font-weight: bolder;
+        } 
+    }
     
 }

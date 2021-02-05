@@ -4,10 +4,7 @@ import './spinner.scss';
 
 const Spinner = () => {
     return (
-        <div className="spinner">
-            <div className="spinner_loading">  
-                loading......
-            </div>
+        <div className="spinner">   
         </div>
     );
 };
