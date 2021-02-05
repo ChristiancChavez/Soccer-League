@@ -1,16 +1,12 @@
 .spinner {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    &__loading {
-        background: transparent;
-        border-radius: 50%;
-        border: 5px solid lightgray;
-        width: 30px;
-        height: 30px;
-        border-top-color: coral;
-        animation: spinner 1s ease infinite;
-    }
+    background: transparent;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    width: 30px;
+    height: 30px;
+    border-top-color: rgb(1, 66, 104);
+    animation: spinner 1s ease-in infinite;
+    margin: auto;
     @keyframes spinner {
         to {
             transform: rotate(1turn);

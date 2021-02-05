@@ -1,0 +1,46 @@
+.coach {
+    display: flex;
+    flex-flow:  column nowrap;
+    align-items: center;
+    padding: 20px 5px;
+    margin: 10px 5px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
+    &-user {
+        border: none;
+        border-radius: 50%;
+        background: lightgray;
+        padding: 30px;
+        &__icon {
+            width: 70px;
+        }
+    }
+    &-info {
+        display: flex;
+        flex-flow:  column nowrap;
+        align-items: center;
+        margin: 5px 0;
+        & h3 {
+            font-size: 30px;
+            font-weight: 800;
+            margin: 0;
+            color: black;
+        }
+        &-category {
+            display: flex;
+            flex-flow: row nowrap;
+            align-items: center;
+            &__icon {
+                width: 35px;
+                height: 35px;
+                margin-right: 5px;
+                color: rgb(1, 66, 104);
+            }
+            &__text {
+                font-size: 20px;
+                font-weight: lighter;
+            }
+        }
+    }
+}

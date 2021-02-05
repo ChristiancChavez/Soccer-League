@@ -1,23 +1,36 @@
 import React, { useContext } from 'react';
 //Components
 import Team from '../Team/Team';
+import Spinner from './../Spinner/Spinner';
 //Context
 import { SoccerFanContext } from '../../context/contextSoccer';
+//Style
+import './teams.scss';
 
 const Teams = () => {
-    const { teams } = useContext(SoccerFanContext);
+    const { teams, renderTeams } = useContext(SoccerFanContext);
     return (
-        <div>
-            {!!teams.length && teams.map(team => 
-                <Team 
-                    team_name={team.team_name} 
-                    team_badge={team.team_badge} 
-                    team_players={team.players} 
-                    team_coaches={team.coaches} 
-                    team_id={team.team_key}
-                    key={team.team_key} 
-                />
-            )}
+        <div className="teams">
+            <span className="teams__title">Teams</span>
+            {renderTeams ? 
+                (   
+                    <div className="teams__content">
+                        {!!teams.length && teams.map(team => 
+                            <Team 
+                                team_name={team.team_name} 
+                                team_badge={team.team_badge} 
+                                team_players={team.players} 
+                                team_coaches={team.coaches} 
+                                team_id={team.team_key}
+                                key={team.team_key} 
+                            />)
+                        }
+                    </div>
+                ):
+                (
+                    <Spinner />
+                )
+            }
         </div>
     );
 };

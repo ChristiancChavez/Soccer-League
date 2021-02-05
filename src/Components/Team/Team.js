@@ -9,6 +9,8 @@ import { faUsers, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //Context
 import { SoccerFanContext } from './../../context/contextSoccer';
+//Style
+import './team.scss';
 
 
 const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) => {
@@ -48,30 +50,31 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
 
     const handleRenderPlayers = () => {
         if(showPlayers){
-            return <div>
-                <div>
-                    {
-                        team_players.map(player => 
-                            <Player 
-                                player_name={player.player_name} 
-                                player_type={player.player_type} 
-                                player_country={player.player_country} 
-                                player_age={player.player_age} 
-                                player_number={player.player_number}
-                                key={player.player_key}
-                            />
+            return <div className="team-content">
+                <div className="team-content-staff"> 
+                    <span className="team-content-staff__title">Players</span>
+                    <button className="team-content__close" type="button">X</button>
+                    {team_players.map(player => 
+                        <Player 
+                            player_name={player.player_name} 
+                            player_type={player.player_type} 
+                            player_country={player.player_country} 
+                            player_age={player.player_age} 
+                            player_number={player.player_number}
+                            key={player.player_key}
+                        />
                         )
                     }
                 </div>
-                <div>
-                    {
-                        team_coaches.map(coach => 
-                            <Coach 
-                                coach_age={coach.coach_age} 
-                                coach_country={coach.coach_country} 
-                                coach_name={coach.coach_name}
-                                key={coach.coach_name}
-                            />
+                <div className="team-content-staff">
+                    <span className="team-content-staff__title">Coach</span>
+                    {team_coaches.map(coach => 
+                        <Coach 
+                            coach_age={coach.coach_age} 
+                            coach_country={coach.coach_country} 
+                            coach_name={coach.coach_name}
+                            key={coach.coach_name}
+                        />
                         )
                     }
                 </div>
@@ -81,17 +84,17 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
     };
     
     return (
-        <div>
-            <img src={team_badge} alt={`${team_name}'s badge`} />
-            <h2>{team_name}</h2>
+        <div className="team">
+            <img className="team__badge" src={team_badge} alt={`${team_name}'s badge`} />
+            <h2 className="team__name">{team_name}</h2>
             {renderPlayer && 
                 handleRenderPlayers()
             }
-            <div>
-                <button type="button" onClick={handleShowPlayers} >
+            <div className="team-actions">
+                <button className="team-actions__action" type="button" onClick={handleShowPlayers} >
                     <FontAwesomeIcon icon={faUsers} />
                 </button>
-                <button type="button" onClick={() => handleAddToFanList(team_badge, team_id, team_name)} >
+                <button className="team-actions__action" type="button" onClick={() => handleAddToFanList(team_badge, team_id, team_name)} >
                     <FontAwesomeIcon icon={faStar} />
                 </button>
             </div>

@@ -3,6 +3,8 @@ import React, { useContext } from 'react';
 import { SoccerFanContext } from '../../context/contextSoccer';
 //Dependencies
 import axios from 'axios';
+//Style
+import './country.scss';
 
 const Country = ({ logo, alt, country_id, league_id }) => {
 
@@ -23,8 +25,8 @@ const Country = ({ logo, alt, country_id, league_id }) => {
     };
 
     return (
-        <button onClick={() => handleFetchTeams(country_id, league_id)}>
-            <img src={logo} alt={alt} />
+        <button className="country" onClick={() => handleFetchTeams(country_id, league_id)}>
+            <img className="country__flag" src={logo} alt={alt} title={alt} />
         </button>
     );
 };

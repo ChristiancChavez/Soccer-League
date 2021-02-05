@@ -11,6 +11,7 @@ const SoccerFanContextProvider = (props) => {
     const [topScores, setTopScores] = useState([]);
     const [standings, setStandings] = useState([]);
     const [loading, setLoading] = useState(false);
+    const [renderTeams, setRenderTeams] = useState(false);
     const [fanList, dispatch] = useReducer(fanListReducer, [], () => {
         const localDataFanList = localStorage.getItem('fanList');
         return localDataFanList ? JSON.parse(localDataFanList) : [];
@@ -43,7 +44,9 @@ const SoccerFanContextProvider = (props) => {
                     loading, 
                     setLoading,
                     fanList, 
-                    dispatch
+                    dispatch,
+                    renderTeams, 
+                    setRenderTeams
                 }   
             }
         >
