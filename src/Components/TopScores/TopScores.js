@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 //Context
 import { SoccerFanContext } from '../../context/contextSoccer';
 //Components
@@ -8,31 +8,42 @@ import './topScores.scss';
 
 const TopScores = () => {
 
-    const { topScores } = useContext(SoccerFanContext);
+    const { topScores, competition } = useContext(SoccerFanContext);
+    const [ renderComponent, setRenderComponent] = useState(true);
+
+    useEffect(() => {
+        return () => {
+            setRenderComponent(false);
+        };
+    }, [competition]);
 
     return (
-        <div className="topscores">
-            <h3 className="topscores__title">TopScores</h3>
-            <table className="topscores-table">
-                <thead>
-                    <tr>
-                        <th>Player</th>
-                        <th>Team</th>
-                        <th>Goals</th>
-                    </tr>
-                </thead>
-                <tbody>
-                {topScores.map(topscore =>
-                    <TopScore 
-                        key={topscore.player_key} 
-                        player_name={topscore.player_name} 
-                        team_name={topscore.team_name} 
-                        goals={topscore.goals}
-                    />    
-                )}
-                </tbody>
-            </table>
-        </div>
+        <>
+            {renderComponent && 
+                <div className="topscores">
+                    <h3 className="topscores__title">TopScores</h3>
+                    <table className="topscores-table">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Team</th>
+                                <th>Goals</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {topScores.map(topscore =>
+                            <TopScore 
+                                key={topscore.player_key} 
+                                player_name={topscore.player_name} 
+                                team_name={topscore.team_name} 
+                                goals={topscore.goals}
+                            />    
+                        )}
+                        </tbody>
+                    </table>
+                </div>
+            }
+        </>
     );
 };
 

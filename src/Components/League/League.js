@@ -13,11 +13,8 @@ import TopScore from '../TopScores/TopScores';
 import topscore from '../../Assets/images/topscore.png';
 import standing from '../../Assets/images/standings.png';
 import shield from '../../Assets/images/shield.png';
-import SerieA from  '../../Assets/images/Italy.png';
-import PrimeraA from  '../../Assets/images/Colombia.png';
 import PremierLeague from  '../../Assets/images/England.png';
-import LaLiga from  '../../Assets/images/Spain.png';
-import Bundesliga from  '../../Assets/images/Germany.png';
+import Ligue1 from  '../../Assets/images/France.png';
 //Style
 import './league.scss';
 
@@ -25,7 +22,7 @@ import './league.scss';
 
 const League = () => {
 
-    const { competition, showLeague, setTeams, setTopScores, setStandings, loading, setRenderTeams } = useContext(SoccerFanContext);
+    const { competition, showLeague, setTeams, setTopScores, setStandings, loading, setRenderTeams, renderTopScores, setRenderTopScores } = useContext(SoccerFanContext);
     const [content, setContent] = useState('');
     const handleFetchTeams = async (league_id) => {
         const requestData = await axios.get(`https://apiv2.apifootball.com/?action=get_teams&league_id=${league_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`)   
@@ -35,7 +32,6 @@ const League = () => {
         .catch(function (error) {
             console.error(error);
         }); 
-        console.log(requestData);
         setTeams(requestData);
         setContent('teams');
         setRenderTeams(true);
@@ -49,8 +45,10 @@ const League = () => {
         .catch(function (error) {
             console.error(error);
         }); 
-        console.log(requestData, 'topscores');
-        setTopScores(requestData);
+        if(requestData.length >= 10){
+            const topScoresFiltered = requestData.filter(topScore => requestData.indexOf(topScore) <= 10);
+            setTopScores(topScoresFiltered);
+        }
         setContent('topscores');
     };
 
@@ -62,7 +60,6 @@ const League = () => {
         .catch(function (error) {
             console.error(error);
         }); 
-        console.log(requestData, 'standings');
         setStandings(requestData);
         setContent('standings');
     };
@@ -120,20 +117,11 @@ const League = () => {
     let leagueLogo;
 
         switch(competition.country_name) {
-            case 'Colombia': 
-                leagueLogo = PrimeraA
-                break;
             case 'England': 
                 leagueLogo = PremierLeague
                 break;
-            case 'Germany': 
-                leagueLogo = Bundesliga
-                break;
-            case 'Italy': 
-                leagueLogo = SerieA
-                break;
-            case 'Spain': 
-                leagueLogo = LaLiga
+            case 'France': 
+                leagueLogo = Ligue1
                 break;
             default:
                 leagueLogo = ''

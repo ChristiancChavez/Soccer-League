@@ -12,6 +12,7 @@ const SoccerFanContextProvider = (props) => {
     const [standings, setStandings] = useState([]);
     const [loading, setLoading] = useState(false);
     const [renderTeams, setRenderTeams] = useState(false);
+    
     const [fanList, dispatch] = useReducer(fanListReducer, [], () => {
         const localDataFanList = localStorage.getItem('fanList');
         return localDataFanList ? JSON.parse(localDataFanList) : [];
@@ -19,11 +20,8 @@ const SoccerFanContextProvider = (props) => {
 
     const [teams, setTeams] = useState([]);
     const LEAGUES_ID = {
-        Colombia: '102',
-        England: '148',
-        Germany: '195',
-        Spain: '468',
-        Italy: '262'
+        France: '177',
+        England: '149',
     }  
 
     return (
