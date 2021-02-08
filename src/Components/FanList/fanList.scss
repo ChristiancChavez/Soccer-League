@@ -1,0 +1,39 @@
+.fanlist {
+    position: fixed;
+    top: 165px;
+    left: -260px;
+    display: flex;
+    flex-flow: column nowrap;
+    align-content: center;
+    justify-content: center;
+    width: 230px;
+    padding: 10px 15px;
+    background: white;
+    box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
+    border: none;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    transition: 1s ease-out;
+    z-index: 9;
+    &__title {
+        font-size: 30px;
+        font-weight: 900;
+        color: rgb(1, 66, 104);
+        margin: 10px 0;
+    }
+    &__team {
+        width: 90px;
+        height: 90px;
+        margin: 15px 0;
+        align-self: center;
+    }
+    &__adv {
+        font-weight: bolder;
+        font-size: 15px;
+        color: black;
+    }
+}
+
+.show {
+    left: 0;
+}   

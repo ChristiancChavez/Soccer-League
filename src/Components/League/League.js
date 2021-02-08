@@ -22,7 +22,7 @@ import './league.scss';
 
 const League = () => {
 
-    const { competition, showLeague, setTeams, setTopScores, setStandings, loading, setRenderTeams, renderTopScores, setRenderTopScores } = useContext(SoccerFanContext);
+    const { competition, showLeague, setTeams, setTopScores, setStandings, loading, setRenderTeams } = useContext(SoccerFanContext);
     const [content, setContent] = useState('');
     const handleFetchTeams = async (league_id) => {
         const requestData = await axios.get(`https://apiv2.apifootball.com/?action=get_teams&league_id=${league_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`)   

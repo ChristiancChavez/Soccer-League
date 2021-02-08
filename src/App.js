@@ -12,8 +12,8 @@ import SoccerFanContextProvider from './context/contextSoccer';
 function App() {
   return (
     <div className="App">
-      <Header />
       <SoccerFanContextProvider>
+        <Header />
         <Countries />
         <League />
         <FanList />
