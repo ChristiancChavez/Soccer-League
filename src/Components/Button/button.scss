@@ -13,11 +13,18 @@
     justify-content: center;
     width: 55px;
     height: 55px;
+    @media screen and (min-width: 750px) {
+        width: 85px;
+        height: 85px;
+    }
     &:hover {
         transform: scale(0.9);
     }
     &:hover:before {
         left: 70px;
+        @media screen and (min-width: 750px) {
+            left: 95px;
+        }
     }
     &:before {
         content: "";
@@ -33,5 +40,9 @@
     &__icon {
         width: 30px;
         height: 30px;
+        @media screen and (min-width: 750px) {
+            width: 45px;
+            height: 45px;
+        }
     }
 }

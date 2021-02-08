@@ -2,23 +2,29 @@
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     padding: 10px 5px;
     border-radius: 12px;
     box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
     border: 1px solid lightgray;
     text-align: center;
+    justify-self: center;
+    width: 60%;
+    @media screen and (min-width: 450px) {
+        width: 80%;
+    }
+    @media screen and (min-widt: 750px) {
+        margin-bottom: 60px;
+    }
     &__name {
-        margin: 0;
-        font-weight: 600;
+        margin: 15px 0;
         font-style: italic;
-        height: 55px;
         margin-top: 5px;
-        font-size: 19px;
+        font-size: 21px;
     }
     &__badge {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
     }
     &-actions {
         display: flex;
@@ -36,6 +42,10 @@
             margin: 0 10px;
             width: 30px;
             height: 30px;
+            @media screen and (min-width: 750px) {
+                width: 45px;
+                height: 45px;
+            }
             &:hover {
                 transform: scale(0.9);
             }
