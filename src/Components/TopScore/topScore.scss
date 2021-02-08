@@ -1,16 +1,17 @@
 .topscore {
     &__player {
-        font-size: 16px;
-        width: 90px;
+        font-size: 20px;
+        width: 120px;
         border-bottom: 1px solid lightgray;
     }
     &__team {
         font-size: 13px;
-        width: 50px;
+        width: 55px;
         border-bottom: 1px solid lightgray;
     }
     &__goals {
         font-weight: 800;
         border-bottom: 1px solid lightgray;
+        width: 60px;
     }
 }

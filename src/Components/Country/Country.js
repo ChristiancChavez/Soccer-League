@@ -8,7 +8,7 @@ import './country.scss';
 
 const Country = ({ logo, alt, country_id, league_id }) => {
 
-    const { setCompetition, setShowLeague, setLoading } = useContext(SoccerFanContext);
+    const { setCompetition, setShowLeague, setLoading, setTeams } = useContext(SoccerFanContext);
 
     const handleFetchTeams = async (country_id, league_id) => {
         const requestData = await axios.get(`https://apiv2.apifootball.com/?action=get_leagues&country_id=${country_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`)   
@@ -18,10 +18,12 @@ const Country = ({ logo, alt, country_id, league_id }) => {
         .catch(function (error) {
             console.error(error);
         }); 
+        console.log(requestData);
         const FilterCompetition = requestData.filter(competition => competition.league_id === league_id);
         setCompetition(FilterCompetition[0]);
         setShowLeague(true);
         setLoading(true);
+        setTeams([]);
     };
 
     return (

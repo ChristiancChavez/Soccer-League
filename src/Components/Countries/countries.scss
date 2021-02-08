@@ -5,4 +5,7 @@
     justify-content: space-around;
     align-items: center;
     padding: 20px 5px;
+    @media screen and (min-width: 750px) {
+        justify-content: center;
+    }
 }

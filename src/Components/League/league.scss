@@ -1,13 +1,7 @@
 .league {
-    //display: grid;
-    //grid-template-columns: 30% 70%;
-    //grid-template-rows: repeat(2, 1fr);
     background: white;
     font-family: 'Abel', cursive;
     &-presentation {
-        // border-bottom: 300px solid rgb(1, 66, 104);
-        // border-right: 50px solid transparent;
-        // height: 0;
         background: rgb(1, 66, 104);
         padding: 40px 15px;
         display: flex;
@@ -19,6 +13,9 @@
             margin-bottom: 50px;
             font-size: 30px;
             font-weight: 600;
+            @media screen and (min-width: 750px) {
+                margin-bottom: 70px;
+            }
         }
         &__logo {
             position: relative;
@@ -30,9 +27,17 @@
             background: linear-gradient(180deg, white 0%, gray 50%, white 100%);
             margin-bottom: 40px;
             box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
+            @media screen and (min-width: 750px) {
+                width: 180px;
+                height: 145px;
+            }
             & img {
                 width: 120px;
                 height: 120px;
+                @media screen and (min-width: 750px) {
+                    width: 160px;
+                    height: 150px;    
+                }
             }
             &::before {
                 content: "";
@@ -44,6 +49,12 @@
                 border-left: 75px solid transparent;
                 border-right: 75px solid transparent;
                 border-bottom: 30px solid white;
+                @media screen and (min-width: 750px) {
+                    top: -50px;
+                    border-bottom: 50px solid white;
+                    border-left: 90px solid transparent;
+                    border-right: 90px solid transparent;
+                }
             }
             &::after {
                 content: "";
@@ -55,12 +66,21 @@
                 border-left: 75px solid transparent;
                 border-right: 75px solid transparent;
                 border-top: 30px solid white;
+                @media screen and (min-width: 750px) {
+                    bottom: -50px;
+                    border-top: 50px solid white;
+                    border-left: 90px solid transparent;
+                    border-right: 90px solid transparent;
+                }
             }
         }
         &__season {
             margin-top: 0;
             color: white;
             font-weight: lighter;
+            @media screen and (min-width: 750px) {
+                margin-top: 20px;
+            }
         }
     }
     &-buttons {
