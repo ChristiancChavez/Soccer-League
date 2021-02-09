@@ -4,7 +4,7 @@
     align-items: center;
     margin-bottom: 30px;
     padding: 10px 5px;
-    border-radius: 12px;
+    border-radius: 8px;
     box-shadow: 0 5px 50px rgba(3, 3, 3, 0.795);
     border: 1px solid lightgray;
     text-align: center;
@@ -67,17 +67,19 @@
     }
     &-content {
         position: absolute;
-        right: 0;
+        display: flex;
+        flex-flow: column wrap; 
+        align-content: center;
         top: 0;
-        display: grid;
-        grid-template-rows: 1fr, 5%;
+        right: 0;
+        z-index: 8;
+        width: 100%;
         background: white;
-        z-index: 50;
         &__close {
             font-size: 15px;
-            color: black;
+            color: lightgray;
             position: absolute;
-            top: 0;
+            top: 5px;
             right: 5px;
             box-shadow: 0 5px 30px rgba(3, 3, 3, 0.938);
             border: none;
@@ -86,21 +88,19 @@
             font-weight: bolder;
             cursor: pointer;
             &:hover {
-                color: gray;
+                color: black;
             }
-            
         }
-        &-staff {
+        &__title {
+            font-size: 30px;
+            font-weight: 800;
+            color: rgb(1, 66, 104);
+            margin: 30px 0;
+        }
+        &__staff {
             display: flex;
-            flex-flow: column nowrap;
-            justify-items: center;
-            padding: 15px;
-            &__title {
-                font-size: 30px;
-                font-weight: 800;
-                color: rgb(1, 66, 104);
-                margin: 10px 0;
-            }
+            flex-flow: row wrap;
+            justify-content: space-around;
         }
     }
 }

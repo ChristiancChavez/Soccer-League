@@ -3,6 +3,9 @@
         font-weight: bolder;
         font-size: 20px;
         width: 30px;
+        @media screen and (min-width: 750px) {
+            font-size: 35px;
+        }
     }
     &__badge {
         width: 50px;
@@ -16,5 +19,8 @@
     & td {
         border-bottom: 1px solid lightgray;
         width: 20px;
+        @media screen and (min-width: 750px) {
+            font-size: 18px;
+        }
     }
 }
