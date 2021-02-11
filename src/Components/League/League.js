@@ -17,13 +17,17 @@ import PremierLeague from  '../../Assets/images/England.png';
 import Ligue1 from  '../../Assets/images/France.png';
 //Style
 import './league.scss';
-
+//Dependencies
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faFutbol } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 const League = () => {
 
     const { competition, showLeague, setTeams, setTopScores, setStandings, loading, setRenderTeams } = useContext(SoccerFanContext);
     const [content, setContent] = useState('');
+    library.add(faFutbol);
 
     const requestUrl = async (league_id, category) => {
         try {
@@ -105,8 +109,6 @@ const League = () => {
                 </div> 
             </div>  
         }
-        return <Spinner />
-        
     }
 
     let leagueLogo;
@@ -123,9 +125,17 @@ const League = () => {
         }
 
     return (
-        <div>
-            {showLeague &&
+        <div className="league-render">
+            {showLeague ? (
+
                 handleRenderTeams()
+            ): 
+            (
+                <div className="league-render-alternative">
+                    <h1>Choose your favorite league</h1>
+                    <FontAwesomeIcon className="league-render-alternative__ball" icon={faFutbol} />
+                </div> 
+            )
             }
         </div>
     );

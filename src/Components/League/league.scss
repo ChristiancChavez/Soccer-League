@@ -97,5 +97,26 @@
             font-weight: bolder;
         } 
     }
-    
+    &-render {
+        display: flex;
+        flex-flow: column nowrap;
+        min-height: 450px;
+        align-content: center;
+        justify-content: center;
+        &-alternative {
+            &__ball {
+                animation: rebound 2s linear infinite;
+                font-size: 50px;
+                margin: 15px auto;
+            }
+        }
+    }
+    @keyframes rebound {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }

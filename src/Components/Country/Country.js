@@ -18,7 +18,6 @@ const Country = ({ logo, alt, country_id, league_id }) => {
         .catch(function (error) {
             console.error(error);
         }); 
-        console.log(requestData);
         const FilterCompetition = requestData.filter(competition => competition.league_id === league_id);
         setCompetition(FilterCompetition[0]);
         setShowLeague(true);
