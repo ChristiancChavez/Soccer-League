@@ -21,7 +21,7 @@ const TopScores = () => {
         <>
             {renderComponent && 
                 <div className="topscores">
-                    <h3 className="topscores__title">TopScores</h3>
+                    <h3 className="topscores__title">TopScorers</h3>
                     <table className="topscores-table">
                         <thead>
                             <tr>

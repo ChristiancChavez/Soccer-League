@@ -24,42 +24,37 @@ const League = () => {
 
     const { competition, showLeague, setTeams, setTopScores, setStandings, loading, setRenderTeams } = useContext(SoccerFanContext);
     const [content, setContent] = useState('');
+
+    const requestUrl = async (league_id, category) => {
+        try {
+            const url = `https://apiv2.apifootball.com/?action=get_${category}&league_id=${league_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`; 
+            const requestData = await axios.get(url);  
+            const { data } = requestData; 
+            return data;
+        } catch (error){
+            return error;
+        }
+    };
+
     const handleFetchTeams = async (league_id) => {
-        const requestData = await axios.get(`https://apiv2.apifootball.com/?action=get_teams&league_id=${league_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`)   
-        .then(function (response) {
-            return response.data;
-        })
-        .catch(function (error) {
-            console.error(error);
-        }); 
+        const requestData = await requestUrl(league_id, 'teams');
         setTeams(requestData);
         setContent('teams');
         setRenderTeams(true);
     };
 
     const handleFetchTopScores = async (league_id) => {
-        const requestData = await axios.get(`https://apiv2.apifootball.com/?action=get_topscorers&league_id=${league_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`)   
-        .then(function (response) {
-            return response.data;
-        })
-        .catch(function (error) {
-            console.error(error);
-        }); 
+        const requestData = await requestUrl(league_id, 'topscorers'); 
+        console.log(requestData, 'REQUEST');
         if(requestData.length >= 10){
             const topScoresFiltered = requestData.filter(topScore => requestData.indexOf(topScore) <= 10);
             setTopScores(topScoresFiltered);
         }
-        setContent('topscores');
+        setContent('topscorers');
     };
 
     const handleFetchStandings = async (league_id) => {
-        const requestData = await axios.get(`https://apiv2.apifootball.com/?action=get_standings&league_id=${league_id}&APIkey=9967e07b2cec6347bca0c3dd135394a3b6ac0baf76af3746dca681c458a5aa53`)   
-        .then(function (response) {
-            return response.data;
-        })
-        .catch(function (error) {
-            console.error(error);
-        }); 
+        const requestData = await requestUrl(league_id, 'standings');
         setStandings(requestData);
         setContent('standings');
     };
@@ -67,7 +62,7 @@ const League = () => {
         switch(content){
             case 'teams':
                 return <Teams />
-            case 'topscores':
+            case 'topscorers':
                 return <TopScore />
             case 'standings':
                 return <Standings />

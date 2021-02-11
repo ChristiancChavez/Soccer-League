@@ -5,7 +5,7 @@ import './header.scss';
 import ball from '../../Assets/images/ballHeader.png';
 //Dependencies
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faUsers, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faStar, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 //Context
 import { SoccerFanContext } from './../../context/contextSoccer';
@@ -15,7 +15,7 @@ const Header = () => {
     
     const { setShowFanList, showFanList } = useContext(SoccerFanContext);
 
-    library.add(faUsers, faTimes);
+    library.add(faStar, faTimes);
 
     const handleShowFanList = () => {
         setShowFanList(!showFanList);
@@ -24,7 +24,7 @@ const Header = () => {
     return (
         <div className="header">
             <button className="header__toggle" type="button" onClick={handleShowFanList} >
-                <FontAwesomeIcon icon={ showFanList ?  faTimes : faUsers} />
+                <FontAwesomeIcon icon={ showFanList ?  faTimes : faStar} />
             </button>
             <h1 className="header__title">
                 Soccer Fan

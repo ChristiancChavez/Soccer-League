@@ -51,9 +51,9 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
     const handleRenderPlayers = () => {
         if(showPlayers){
             return <div className="team-content">
-                <div className="team-content-staff"> 
-                    <span className="team-content-staff__title">Players</span>
-                    <button className="team-content__close" type="button">X</button>
+                <button className="team-content__close" type="button" onClick={() => setRenderPlayer(false)}>X</button>
+                <span className="team-content__title">Staff</span>
+                <div className="team-content__staff"> 
                     {team_players.map(player => 
                         <Player 
                             player_name={player.player_name} 
@@ -65,9 +65,6 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
                         />
                         )
                     }
-                </div>
-                <div className="team-content-staff">
-                    <span className="team-content-staff__title">Coach</span>
                     {team_coaches.map(coach => 
                         <Coach 
                             coach_age={coach.coach_age} 
@@ -87,9 +84,6 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
         <div className="team">
             <img className="team__badge" src={team_badge} alt={`${team_name}'s badge`} />
             <h2 className="team__name">{team_name}</h2>
-            {renderPlayer && 
-                handleRenderPlayers()
-            }
             <div className="team-actions">
                 <button className="team-actions__action" type="button" onClick={handleShowPlayers} >
                     <FontAwesomeIcon icon={faUsers} />
@@ -98,6 +92,9 @@ const Team = ({ team_name, team_badge, team_players, team_coaches, team_id }) =>
                     <FontAwesomeIcon icon={faStar} />
                 </button>
             </div>
+            {renderPlayer && 
+                handleRenderPlayers()
+            }
         </div>
     );
 };
